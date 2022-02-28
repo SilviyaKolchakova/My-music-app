@@ -114,7 +114,7 @@ def delete_profile(request):
         form = DeleteProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
-            Profile.delete(profile)
+            # Profile.delete(profile)
             return redirect('show index')
     else:
         form = DeleteProfileForm(instance=profile)

@@ -72,9 +72,12 @@ class DeleteAlbumForm(forms.ModelForm):
 
 
 class DeleteProfileForm(forms.ModelForm):
+
     def save(self, commit=True):
+
         self.instance.delete()
         Album.objects.all().delete()
+
         return self.instance
 
     class Meta:
